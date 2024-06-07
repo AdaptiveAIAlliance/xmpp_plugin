@@ -305,7 +305,7 @@ public class FlutterXmppPlugin implements MethodCallHandler, FlutterPlugin, Acti
                     successBroadcastReceiver = getSuccessBroadCast(events);
                     IntentFilter filter = new IntentFilter();
                     filter.addAction(Constants.SUCCESS_MESSAGE);
-                    activity.registerReceiver(successBroadcastReceiver, filter);
+                    activity.registerReceiver(successBroadcastReceiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED);
                 }
             }
 
@@ -328,7 +328,7 @@ public class FlutterXmppPlugin implements MethodCallHandler, FlutterPlugin, Acti
                     errorBroadcastReceiver = getErrorBroadCast(errorEvents);
                     IntentFilter filter = new IntentFilter();
                     filter.addAction(Constants.ERROR_MESSAGE);
-                    activity.registerReceiver(errorBroadcastReceiver, filter);
+                    activity.registerReceiver(errorBroadcastReceiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED);
                 }
             }
 
@@ -351,7 +351,7 @@ public class FlutterXmppPlugin implements MethodCallHandler, FlutterPlugin, Acti
                     connectionBroadcastReceiver = getConnectionBroadCast(connectionEvents);
                     IntentFilter filter = new IntentFilter();
                     filter.addAction(Constants.CONNECTION_STATE_MESSAGE);
-                    activity.registerReceiver(connectionBroadcastReceiver, filter);
+                    activity.registerReceiver(connectionBroadcastReceiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED);
                 }
             }
 
@@ -428,7 +428,7 @@ public class FlutterXmppPlugin implements MethodCallHandler, FlutterPlugin, Acti
             filter.addAction(Constants.RECEIVE_MESSAGE);
             filter.addAction(Constants.OUTGOING_MESSAGE);
             filter.addAction(Constants.PRESENCE_MESSAGE);
-            activity.registerReceiver(mBroadcastReceiver, filter);
+            activity.registerReceiver(mBroadcastReceiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED);
         }
 
     }
