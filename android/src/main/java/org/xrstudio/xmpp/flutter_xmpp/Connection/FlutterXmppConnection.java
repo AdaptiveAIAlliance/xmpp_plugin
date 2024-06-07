@@ -584,7 +584,7 @@ public class FlutterXmppConnection implements ConnectionListener {
         filter.addAction(Constants.X_SEND_MESSAGE);
         filter.addAction(Constants.READ_MESSAGE);
         filter.addAction(Constants.GROUP_SEND_MESSAGE);
-        mApplicationContext.registerReceiver(uiThreadMessageReceiver, filter);
+        mApplicationContext.registerReceiver(uiThreadMessageReceiver, filter, mApplicationContext.RECEIVER_NOT_EXPORTED);
 
     }
 
